@@ -9,7 +9,7 @@ import imutils
 # echo-server.py
 
 
-HOST = "192.168.1.21" 
+HOST = "192.168.1.13" 
 PORT = 55555  # Port to listen on (non-privileged ports are > 1023)
 
 # AF_INET specifies IPv4        SOCK_STREAM specifies TCP Protocol
