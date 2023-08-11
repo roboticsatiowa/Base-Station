@@ -31,7 +31,6 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
                 break
             data += packet
             packed_msg_size = data[:payload_size]
-            print(packed_msg_size)
             data = data[payload_size:]
             msg_size = struct.unpack("Q", packed_msg_size)[0]
             while len(data) < msg_size:
