@@ -21,9 +21,9 @@ class XBcontroller():
         0: 'LX',
         1: 'LY',
         2: 'LT',
-        3: 'RX',
-        4: 'RY',
-        5: 'RT',
+        3: 'RT',
+        4: 'RX',
+        5: 'RY',
     }
 
     def __init__(self):
