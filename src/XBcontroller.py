@@ -20,10 +20,10 @@ class XBcontroller():
     axes = {
         0: 'LX',
         1: 'LY',
-        2: 'LT',
-        3: 'RT',
-        4: 'RX',
-        5: 'RY',
+        2: 'RX',
+        3: 'RY',
+        4: 'LT',
+        5: 'RT',
     }
 
     def __init__(self):
