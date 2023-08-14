@@ -2,7 +2,6 @@
 # Launch script for windows base-station
 # --------------------------------------
 
-
 # Stop and delete any previous jobs before starting new ones
 Get-Job -Command "*python*" | Remove-Job
 
