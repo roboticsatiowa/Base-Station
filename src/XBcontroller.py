@@ -27,7 +27,9 @@ class XBcontroller():
     }
 
     def __init__(self):
-        self.joystick = pygame.joystick.Joystick(0)
+        self.joystick = None
+        while not self.joystick:
+            self.joystick = pygame.joystick.Joystick(0)
 
     def update(self) -> None:
         self.A = bool(self.joystick.get_button(0))
