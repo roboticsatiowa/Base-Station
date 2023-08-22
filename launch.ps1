@@ -3,6 +3,7 @@
 # --------------------------------------
 
 # Stop and delete any previous jobs before starting new ones
+Get-Job -Command "*python*" | Stop-Job
 Get-Job -Command "*python*" | Remove-Job
 
 # Begin camera feeds
