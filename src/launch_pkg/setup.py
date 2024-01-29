@@ -1,6 +1,6 @@
 from setuptools import find_packages, setup
 
-package_name = 'launch_pkg'
+package_name = 'BaseStation'
 
 setup(
     name=package_name,
