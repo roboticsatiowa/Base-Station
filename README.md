@@ -100,3 +100,4 @@ Note: rover will need to be launched separately.
 - [ ] Moveit2 motion planning
 - [ ] Foxglove custom control/gui options
 - [ ] ROS Bag recording
+
