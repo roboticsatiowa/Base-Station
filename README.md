@@ -47,7 +47,10 @@ These instructions will get you a copy of the project up and running on your loc
 - [ ] x86 Ubuntu LTS 20.04
 
 ### Dependencies
-- [ ] ```sudo apt install python3-colcon-common-extensions```
+```
+sudo apt install python3-colcon-common-extensions ros-humble-foxglove-studio
+sudo snap install foxglove-studio
+```
 
 ### Installing
 
@@ -96,3 +99,4 @@ Note: rover will need to be launched separately.
 - [ ] Moveit2 inverse kinematics
 - [ ] Moveit2 motion planning
 - [ ] Foxglove custom control/gui options
+- [ ] ROS Bag recording
