@@ -15,14 +15,21 @@ def generate_launch_description():
         name="foxglove_bridge",
         package="foxglove_bridge",
         executable="foxglove_bridge",
-        output="screen",
     )
 
     # Start foxglove studio
     exec_foxglove_studio = ExecuteProcess(cmd=["foxglove-studio"])
+
+    node_joy = Node(
+        name="joy_node",
+        package="joy",
+        executable="joy_node",
+        output="screen",
+    )
     return LaunchDescription(
         [
             node_foxglove_bridge,
             exec_foxglove_studio,
+            node_joy
         ]
     )
