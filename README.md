@@ -62,6 +62,8 @@ cd Base-Station
 
 Check for missing dependencies and install them using rosdep.
 ```bash
+sudo apt install python3-rosdep2
+rosdep update
 rosdep install --from-paths src --ignore-src -r -y
 ```
 
