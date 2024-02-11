@@ -44,7 +44,7 @@ These instructions will get you a copy of the project up and running on your loc
 ### Prerequisites
 
 - [ ] ROS2 Humble installed and sourced (Instructions [here](https://docs.ros.org/en/humble/Installation/Ubuntu-Install-Debians.html))
-- [ ] x86 Ubuntu LTS 20.04
+- [ ] x86 Ubuntu LTS 22.04
 
 ### Dependencies
 ```
