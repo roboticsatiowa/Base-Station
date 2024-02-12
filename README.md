@@ -76,6 +76,12 @@ Domain ID: In order for multiple machines to communicate via ROS they need to ha
 ```bash
 export ROS_DOMAIN_ID=69
 ```
+<details>
+<summary>Optional: Add ROS_DOMAIN_ID to bashrc</summary>
+```bash
+echo "export ROS_DOMAIN_ID=69" >> ~/.bashrc
+```
+</details>
 
 ### Running the code
 
