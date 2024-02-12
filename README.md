@@ -47,8 +47,8 @@ These instructions will get you a copy of the project up and running on your loc
 - [ ] x86 Ubuntu LTS 22.04
 
 ### Dependencies
-```
-sudo apt install python3-colcon-common-extensions ros-humble-foxglove-studio
+```bash
+sudo apt install python3-colcon-common-extensions ros-humble-foxglove-bridge tmux
 sudo snap install foxglove-studio
 ```
 
