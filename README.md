@@ -48,7 +48,7 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Dependencies
 ```bash
-sudo apt install python3-colcon-common-extensions ros-humble-foxglove-bridge tmux
+sudo apt install python3-colcon-common-extensions ros-humble-foxglove-bridge tmux python3-rosdep2
 sudo snap install foxglove-studio
 ```
 
@@ -62,7 +62,6 @@ cd Base-Station
 
 Check for missing dependencies and install them using rosdep.
 ```bash
-sudo apt install python3-rosdep2
 rosdep update
 rosdep install --from-paths src --ignore-src -r -y
 ```
