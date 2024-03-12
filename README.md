@@ -43,54 +43,18 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-- [ ] ROS2 Humble installed and sourced (Instructions [here](https://docs.ros.org/en/humble/Installation/Ubuntu-Install-Debians.html))
-- [ ] x86 Ubuntu LTS 22.04
-
-### Dependencies
-```bash
-sudo apt install python3-colcon-common-extensions ros-humble-foxglove-bridge tmux python3-rosdep2
-sudo snap install foxglove-studio
-```
+- [ ] Ubuntu LTS 22.04
 
 ### Installing
 
 Clone the repository into your workspace.
 ```bash
 git clone https://github.com/roboticsatiowa/Base-Station.git
-cd Base-Station
+chmod u+x ./Base-Station/install.sh
+./Base-Station/install.sh
 ```
-
-Check for missing dependencies and install them using rosdep.
-```bash
-rosdep update
-rosdep install --from-paths src --ignore-src -r -y
-```
-
-Build and source the workspace.
-```bash
-colcon build
-source install/setup.bash
-```
-
-Domain ID: In order for multiple machines to communicate via ROS they need to have the same ROS_DOMAIN_ID env variable. It is HIGHLY recommended to set this in your bashrc file.
-```bash
-export ROS_DOMAIN_ID=69
-```
-<details>
-<summary>Optional: Add ROS_DOMAIN_ID to bashrc</summary>
-
-```bash
-echo "export ROS_DOMAIN_ID=69" >> ~/.bashrc
-```
-</details>
 
 ### Running the code
-
-Always make sure the workspace is sourced before running the code.
-```bash
-source install/setup.bash 
-```
-
 
 Option 1 (Recommended): Run the launch file using the launch script. This will automatically launch the rover.
 ```bash
