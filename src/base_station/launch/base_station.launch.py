@@ -14,7 +14,7 @@ def generate_launch_description():
     )
 
     # Start foxglove studio
-    exec_foxglove_studio = ExecuteProcess(cmd=["foxglove-studio"])
+    exec_foxglove_studio = ExecuteProcess(cmd="foxglove-studio &> /dev/null".split(" "))
 
     node_joy = Node(
         name="joy_node",
