@@ -45,11 +45,11 @@ if [ "$(docker container ls -aqf name=base-station)" ]; then
         docker stop base-station > /dev/null 2>&1
         docker rm base-station > /dev/null 2>&1
         echo "Launching base station..."
-        docker run --detach --name base-station base-station:latest
+        docker run --detach -p 8765:8765 --name base-station base-station:latest
     fi
 else
     echo "Launching the base station..."
-    docker run --detach --name base-station base-station:latest > /dev/null 2>&1
+    docker run --detach -p 8765:8765 --name base-station base-station:latest > /dev/null 2>&1
 fi
 
 
