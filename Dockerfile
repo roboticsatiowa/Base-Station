@@ -8,4 +8,4 @@ RUN apt-get update && apt-get install -y \
 
     
 EXPOSE 8765
-CMD bash -c "source /opt/ros/humble/setup.bash && ros2 launch foxglove_bridge foxglove_bridge_launch.xml port:=8765"
+CMD bash -c "source /opt/ros/humble/setup.bash && ros2 launch foxglove_bridge foxglove_bridge_launch.xml port:=8765 address:=127.0.0.1"
