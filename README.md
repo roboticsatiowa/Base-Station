@@ -29,7 +29,7 @@ Our rover uses ROS2 as it's core technology for teleoperation and data collectio
 
 ### Dependencies:
   - [Docker Desktop](https://www.docker.com/products/docker-desktop/)
-  - Any web browser (Tested with chrome)
+  - Any web browser (Tested with [Chrome](https://www.google.com/chrome/))
   - [Foxglove Studio](https://foxglove.dev/download) (optional)
 
 ### Running the code
