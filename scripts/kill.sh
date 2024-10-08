@@ -1,7 +1,5 @@
 #! /usr/bin/env bash
 
-echo "Stopping container..."
-docker kill base-station > /dev/null 2>&1 || true
-echo "Removing container..."
-docker rm base-station > /dev/null 2>&1 || true
-echo "Done"
+docker kill base-station  || true
+docker rm base-station || true
+ps -ef | grep 'foxglove' | grep -v grep | awk '{print $2}' | xargs -r kill -9
