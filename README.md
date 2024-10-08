@@ -1,6 +1,6 @@
 <p align="center">
   <a href="" rel="noopener">
- <img width=600px src="images/logo.jpg" alt="Project logo"></a>
+ <img width=600px src="https://github.com/roboticsatiowa/Documents-and-Resources/raw/main/Media/Banner.png?raw=true" alt="Project logo"></a>
 </p>
 
 <h3 align="center">Robotics at Iowa Mars Rover Challenge</h3>
@@ -10,66 +10,37 @@
 [![Status](https://img.shields.io/badge/status-active-success.svg)]()
 [![GitHub Issues](https://img.shields.io/github/issues/roboticsatiowa/Base-Station.svg)](https://github.com/roboticsatiowa/Base-Station/issues)
 [![GitHub Pull Requests](https://img.shields.io/github/issues-pr/roboticsatiowa/Base-Station.svg)](https://github.com/roboticsatiowa/Base-Station/pulls)
-[![License](https://img.shields.io/badge/license-MIT-blue.svg)](/LICENSE)
+[![License](https://img.shields.io/badge/license-GPL_3.0-blue.svg)](/LICENSE)
 
 </div>
 
 ---
 
-<p align="center"> 
-    This repository contains the code for our base station from which our mars rover is controlled.
-    <br> 
-</p>
-
-## 📝 Table of Contents
+### Table of Contents
 
 - [About](#about)
 - [Getting Started](#getting_started)
-- [Deployment](#deployment)
 - [Usage](#usage)
-- [Built Using](#built_using)
-- [TODO](../TODO.md)
-- [Contributing](../CONTRIBUTING.md)
 - [Authors](#authors)
-- [Acknowledgments](#acknowledgement)
 
-## About <a name = "about"></a>
+### About
 
-Our rover uses 6 wheeled rocker bogie suspension system along with a 5 DOF custom arm. The onboard computing is handled by an Nvidia Jetson Xavier coupled with a Teensy 4.1 microcontroller to assist with IO. The rover is equipped with an Intel Realsense depth camera, 3 Cameras, and GPS.
+Our rover uses ROS2 as it's core technology for teleoperation and data collection. It runs entirely within lightweight docker containers. The Base Station consists only of Foxglove Studio (GUI), foxglove_bridge, and ROS2 Joy_node. All other processing is handled locally on the rover. foxglove_bridge and the joy_node are both hosted within the docker container. Foxglove Studio can either be installed locally or run within the browser.
 
-## Getting Started <a name = "getting_started"></a>
-
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. 
-
-### Prerequisites
-
-- [ ] Ubuntu LTS 22.04
-
-### Installing
-
-Clone the repository into your workspace.
-```bash
-git clone https://github.com/roboticsatiowa/Base-Station.git
-chmod u+x ./Base-Station/install.sh
-./Base-Station/install.sh
-```
+### Dependencies:
+  - [Docker Desktop](https://www.docker.com/products/docker-desktop/)
+  - Any web browser (Tested with chrome)
+  - [Foxglove Studio](https://foxglove.dev/download) (optional)
 
 ### Running the code
 
-Option 1 (Recommended): Run the launch file using the launch script. This will automatically launch the rover.
-```bash
-source launch.sh
-```
-Option 2: Run the launch file directly.
-```bash
-ros2 launch base_station base_station.launch.py
-```
-Note: rover will need to be launched separately.
+1. Download depencies (see above)
+2. Clone the code `git clone https://github.com/roboticsatiowa/Base-Station`
+3. Enter workspace `cd Base-Station`
+4. Run launch script 
+   - MacOS/Linux: `./launch.sh`   
+   - Windows: `.\launch.bat`
 
-## Roadmap
 
-- [ ] Moveit2 inverse kinematics
-- [ ] Moveit2 motion planning
-- [ ] Foxglove custom control/gui options
-- [ ] ROS Bag recording
-
+### Authors
+- [@ethanholter](https://github.com/ethanholter) - Responsible for this mess :\)
