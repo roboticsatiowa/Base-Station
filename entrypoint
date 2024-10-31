@@ -1,0 +1,8 @@
+#! /usr/bin/env bash
+
+source /opt/ros/humble/setup.bash
+
+ros2 launch foxglove_bridge foxglove_bridge_launch.xml &
+ros2 run joy joy_node &
+
+while true; do sleep 1000; done
