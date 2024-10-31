@@ -36,12 +36,12 @@ docker buildx build -t base-station:latest %SCRIPT_DIR%
 :run
 @REM Run the base station
 echo Creating docker container...
-docker container kill base-station > nul
-docker container rm base-station > nul
+docker container kill base-station 2> nul
+docker container rm base-station 2> nul
 docker run --detach -p 8765:8765 --name base-station base-station:latest > nul
 
 @REM open the base station in the browser. kill foxglove if it's already running
-taskkill /f /im "Foxglove Studio.exe" > nul
+taskkill /f /im "Foxglove Studio.exe" 2> nul
 start "" %FOXGLOVE_URL_1% || echo "Failed to open the browser automatically. Telemetry: %FOXGLOVE_URL_1%"
 start "" %FOXGLOVE_URL_2% || echo "Failed to open the browser automatically. Cameras:   %FOXGLOVE_URL_2%"
   
