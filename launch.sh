@@ -30,6 +30,12 @@ if ! command -v docker &> /dev/null; then
     exit 1
 fi
 
+# ensure python is installed
+if ! command -v python3 &> /dev/null; then
+    echo "Python is not installed. Visit https://www.python.org/downloads/ to install Python."
+    exit 1
+fi
+
 # ensure docker is running
 if ! docker info > /dev/null 2>&1; then
     echo "Docker is not running. Please start Docker and try again."
@@ -41,7 +47,7 @@ docker buildx build -t base-station:latest $SCRIPT_DIR || (echo "Failed to build
 # Check if the base station is already running
 docker container kill base-station
 docker container rm base-station
-docker run --detach -p 8765:8765 --name base-station base-station:latest
+docker run -d -p 8765:8765 -p 7492:7492 --name base-station base-station:latest
 
 # Open the browser with foxglove
 echo "Opening the browser..."
@@ -49,3 +55,5 @@ sleep 1
 echo
 xdg-open $FOXGLOVE_URL_1 || echo "Failed to open the browser automatically. Telemetry: $FOXGLOVE_URL_1"
 xdg-open $FOXGLOVE_URL_2 || echo "Failed to open the browser automatically. Cameras:   $FOXGLOVE_URL_2"
+
+python3 $SCRIPT_DIR/gamepad/gamepad.py

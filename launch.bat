@@ -24,6 +24,12 @@ docker -v > nul || (
     exit /b 1
 )
 
+@REM ensure python is installed
+python3 -V > nul || (
+    echo Python is not installed. Please install Python and try again.
+    exit /b 1
+)
+
 @REM ensure docker is running
 docker ps > nul || (
     echo Docker is not running. Please start Docker and try again.
@@ -38,10 +44,12 @@ docker buildx build -t base-station:latest %SCRIPT_DIR%
 echo Creating docker container...
 docker container kill base-station 2> nul
 docker container rm base-station 2> nul
-docker run --detach -p 8765:8765 --name base-station base-station:latest > nul
+docker run -d -p 8765:8765 -p 7492:7492 --name base-station base-station:latest > nul
 
-@REM open the base station in the browser. kill foxglove if it's already running
-taskkill /f /im "Foxglove Studio.exe" 2> nul
+@REM open the base station in the brow  ser. kill foxglove if it's already running
+taskkill /f /im "Foxglove Studio.exe" 2> nul > nul && echo "Foxglove Studio was already running. Restarting..."
 start "" %FOXGLOVE_URL_1% || echo "Failed to open the browser automatically. Telemetry: %FOXGLOVE_URL_1%"
 start "" %FOXGLOVE_URL_2% || echo "Failed to open the browser automatically. Cameras:   %FOXGLOVE_URL_2%"
+
+python3 %SCRIPT_DIR%/gamepad/gamepad.py
   
